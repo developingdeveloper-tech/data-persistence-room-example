@@ -15,17 +15,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:padding="16dp">
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/id_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{String.valueOf(book.id)}"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:text="@{String.valueOf(`#` + book.id)}"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="#1" />
+            tools:text="#1101" />
 
         <TextView
             android:id="@+id/title_text_view"
@@ -33,11 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@{book.title}"
-            app:layout_constraintVertical_chainStyle="packed"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/description_text_view"
             app:layout_constraintEnd_toStartOf="@+id/published_on_text_view"
             app:layout_constraintStart_toEndOf="@id/id_text_view"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
             tools:text="Harry Potter" />
 
         <TextView
