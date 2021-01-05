@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="tech.developingdeveloper.datapersistenceroomexample.ui.home.HomeViewModel" />
+
+        <import type="tech.developingdeveloper.datapersistenceroomexample.utils.DataBindingConverter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/author_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/title"
+                android:inputType="textCapWords"
+                android:text="@={viewModel.title}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/author_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/pages_layout"
+            app:layout_constraintEnd_toEndOf="@id/title_layout"
+            app:layout_constraintStart_toStartOf="@id/title_layout"
+            app:layout_constraintTop_toBottomOf="@id/title_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/author_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/author"
+                android:inputType="textCapWords"
+                android:text="@={viewModel.author}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pages_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/title_layout"
+            app:layout_constraintStart_toStartOf="@id/title_layout"
+            app:layout_constraintTop_toBottomOf="@id/author_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pages_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/pages"
+                android:inputType="number"
+                android:text="@={DataBindingConverter.toString(viewModel.pages)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

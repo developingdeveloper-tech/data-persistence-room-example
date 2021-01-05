@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataPersistenceRoomExample</string>
+    <string name="title">Title</string>
+    <string name="author">Author</string>
+    <string name="pages">Pages</string>
+    <string name="add_book">Add Book</string>
+</resources>
