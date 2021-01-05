@@ -13,9 +13,9 @@ import tech.developingdeveloper.datapersistenceroomexample.data.model.Book
  */
 
 @Database(
-    entities = [Book::class],
-    version = 1,
-    exportSchema = false
+        entities = [Book::class],
+        version = 1,
+        exportSchema = false
 )
 abstract class BookDatabase : RoomDatabase() {
 
@@ -25,22 +25,20 @@ abstract class BookDatabase : RoomDatabase() {
 
         private const val DB_NAME = "book_db"
 
+        @Volatile
         private var INSTANCE: BookDatabase? = null
 
-        fun getInstance(context: Context): BookDatabase {
-            if (INSTANCE != null)
-                return INSTANCE!!
-
+        fun getInstance(context: Context): BookDatabase = INSTANCE ?: synchronized(this) {
             val instance = Room.databaseBuilder(
-                context,
-                BookDatabase::class.java,
-                DB_NAME
+                    context.applicationContext,
+                    BookDatabase::class.java,
+                    DB_NAME
             )
-                .fallbackToDestructiveMigration()
-                .build()
+                    .fallbackToDestructiveMigration()
+                    .build()
 
             INSTANCE = instance
-            return instance
+            instance
 
         }
     }
