@@ -11,7 +11,7 @@ This project is about understanding how the data is stored in android. There are
   - If you like the repository, please star it.
   
   ## License
-  MIT License. See the [LICENSE](LICENSE) file for details
+  Apache-2.0 License. See the [LICENSE](LICENSE) file for details
   
  ## Author
  <a href="https://github.com/5AbhishekSaxena"><img src="https://img.shields.io/github/followers/5AbhishekSaxena?style=social"></a> 
