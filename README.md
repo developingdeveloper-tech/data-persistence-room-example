@@ -4,7 +4,7 @@ This project is about understanding how the data is stored in android. There are
 
 ## Libraries Used
 - [Flow](https://developer.android.com/kotlin/flow) - Asynchronous programming
-- [Room library](https://developer.android.com/jetpack/androidx/releases/room) -Library provides an abstraction layer over SQLite
+- [Room library](https://developer.android.com/jetpack/androidx/releases/room) - Library provides an abstraction layer over SQLite
 
  ## Contributing
   - For contributions in this repository, please read [Contribution guidelines for this project](/CONTRIBUTING.md) first. (Please pull the changes from this repo if you have already forked the repository and are facing conflicts)
