@@ -1,6 +1,6 @@
 # data-persistence-room-example
 
-This is a project to understand data persistence in an `SQL database` in android.
+This project is about understanding how the data is stored in android. There are multiple ways of data persistence, which are key-value pairs using Datastore and `SQL database using Room`.
 
 ## Libraries Used
 - [Flow](https://developer.android.com/kotlin/flow) - Asynchronous programming
